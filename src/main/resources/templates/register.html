@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ChatApp - Register</title>
+</head>
+<body>
+  <header th:insert="fragments/header.html :: header">
+<!--    <header th:insert="~{fragments/header.html :: header}">-->
+
+    <!--    insert will take from fragement and place
+:: - the special name in the file
+-->
+
+  </header>
+  <main>
+    <form action="/register" method="post">
+      <div>
+        <label>Your name</label>
+        <input name="fullname" type="text" required>
+      </div>
+
+      <div>
+        <label>Your username</label>
+        <input name="username" type="text" minlength="4" required>
+      </div>
+
+      <div>
+        <label>Your email</label>
+        <input name="email" type="email" required>
+      </div>
+
+      <div>
+        <label>Your password</label>
+        <input name="password" type="password" required>
+      </div>
+
+      <div>
+        <label>Your location</label>
+        <input name="location" type="text">
+      </div>
+
+      <div>
+        <label>Chat color</label>
+        <input name="color" type="color">
+      </div>
+
+      <div>
+        <label>Date of birth</label>
+        <input name="bithdate" type="date">
+      </div>
+
+      <div>
+        <label>Profile picture url</label>
+        <input name="profilePictureUrl" type="url">
+      </div>
+
+      <div>
+        <button type="submit" name="create">Create Account</button>
+      </div>
+    </form>
+  </main>
+
+</body>
+</html>
