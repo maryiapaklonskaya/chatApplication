@@ -47,7 +47,9 @@
 
       <div>
         <label>Date of birth</label>
-        <input name="bithdate" type="date">
+        <input name="bithdate" type="date" required th:value="${user?.getBirthdate()}">
+<!--        this th:value will allow us to pre-fill values for the input so that the inputs are
+            not empty when user's registration is not successful-->
       </div>
 
       <div>
@@ -57,6 +59,14 @@
 
       <div>
         <button type="submit" name="create">Create Account</button>
+      </div>
+
+      <div>
+        <p th:if="${message}">
+          <span th:if="${message == 'signup_failed'}">
+          <label th:if="${error}" th:text="${error}"></label>
+          </span>
+        </p>
       </div>
     </form>
   </main>

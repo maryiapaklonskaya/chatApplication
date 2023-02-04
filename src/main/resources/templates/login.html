@@ -11,18 +11,27 @@
   <main>
       <h3>Login</h3>
       <div>
-          <form action="login.html" method="post">
+          <form action="/login" method="post">
               <div>
-                  <label></label>
-                  <input>
+                  <label>enter username</label>
+                  <input name="username" type="text" required>
               </div>
 
               <div>
-                  <label></label>
-                  <input>
+                  <label>password</label>
+                  <input name="password" type="password" required>
               </div>
+
+              <button>login</button>
 
           </form>
+          <p>
+<!--          <span th:text="${message == 'signup_success'}">-->
+          <span th:if="${message == 'signup_success'}">
+              Congrats!!! you have successfully registered</span>
+          <span th:if="${message == 'login_failed'}">
+              fail!!! unable to login</span>
+          </p>
       </div>
 
   </main>

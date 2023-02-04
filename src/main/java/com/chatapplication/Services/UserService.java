@@ -18,4 +18,18 @@ public class UserService {
         this.userRepository.save(user);
     }
 
+    public User verifiedUser(User userLoginRequest) throws Exception{
+        User foundUser = this.userRepository.findByUsernameAndPasswordOrderByCreatedAt(userLoginRequest.getUsername(), userLoginRequest.getPassword());
+
+        if(foundUser == null){throw new Exception("usernane or password is incorrect");
+
+        }
+
+        return foundUser; // foundUser.getId() sometimes returning the ID of hte user only is needed
+    }
+
+    public User findUserById(Long userId) throws Exception {
+        return this.userRepository.findById(userId).orElseThrow();
+    }
+
 }
